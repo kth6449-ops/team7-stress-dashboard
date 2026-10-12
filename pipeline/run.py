@@ -94,6 +94,11 @@ def main() -> int:
 
         all_obs = db.load_observations(conn)          # 같은 트랜잭션: 방금 저장한 값 포함
         ind, daily = scoring.compute_scores(all_obs)
+        if daily.empty:
+            # 과거 데이터가 부족하면(예: 최근 14일만 적재) 오류 없이 0행이 나옴 → 성공으로 기록하지 않음
+            raise RuntimeError(
+                "종합점수 0행: 비교 기간(최소 2년) 부족. 최초 적재는 --start 2005-01-01로 실행"
+            )
         written += save_scores(conn, ind, daily, run_id)
 
         conn.commit()                                  # 여기서 한 번에 확정

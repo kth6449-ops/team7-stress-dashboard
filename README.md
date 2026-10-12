@@ -12,10 +12,11 @@ FRED API → pipeline(GitHub Actions) → Supabase(PostgreSQL) → api(FastAPI·
 | 경로 | 내용 | 담당 |
 |---|---|---|
 | `pipeline/collect.py`, `pipeline/db.py`, `db/schema.sql` | 수집·DB | A |
-| `pipeline/scoring.py`, `tests/` | 점수 계산 | B |
+| `pipeline/scoring.py`, `tests/` (`tests/data/` 검증용 데이터) | 점수 계산 | B |
 | `pipeline/run.py`, `api/`, `.github/workflows/` | 통합·API·자동화 | C |
 | `frontend/` | 화면 | D |
 | `docs/api/` | API 규격·샘플 | C |
+| `docs/modules/` | A·B 전달본 설명서 (버전별 보관) | A·B |
 
 ## 운영 규칙
 
@@ -33,9 +34,13 @@ pip install -r requirements.txt
 # 임시 API (샘플 JSON 반환)
 uvicorn api.main:app --reload        # http://127.0.0.1:8000/docs
 
+# 점수 계산 테스트 (pytest는 테스트할 때만 설치)
+pip install pytest && pytest tests/test_scoring.py -q
+
 # 파이프라인 (A·B 모듈 반영 후)
 export FRED_API_KEY=...  DATABASE_URL=...
-python -m pipeline.run --days 14
+python -m pipeline.run --start 2005-01-01   # 최초 1회: 전체 적재 (백분위에 최소 2년 필요)
+python -m pipeline.run --days 14            # 이후 매일
 ```
 
 ## 필요한 환경변수

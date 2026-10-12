@@ -1,0 +1,13 @@
+# 비밀값 (절대 커밋 금지)
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
