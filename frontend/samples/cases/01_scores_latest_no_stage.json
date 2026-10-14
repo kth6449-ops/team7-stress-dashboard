@@ -1,0 +1,22 @@
+{
+  "as_of_date": "2020-06-15",
+  "rule_version": "v0.1",
+  "total_score": 41.5,
+  "total_percentile": null,
+  "stage": null,
+  "markets": {
+    "equity": 15.5,
+    "fx": 9.0,
+    "rate": 4.5,
+    "credit": 12.5
+  },
+  "contributions": {
+    "equity": 37.35,
+    "fx": 21.69,
+    "rate": 10.84,
+    "credit": 30.12
+  },
+  "spread_count": 2,
+  "is_provisional": false,
+  "computed_at": "2026-10-08T01:05:12Z"
+}

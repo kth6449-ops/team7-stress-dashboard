@@ -1,0 +1,22 @@
+{
+  "as_of_date": "2026-10-07",
+  "rule_version": "v0.1",
+  "total_score": 68,
+  "total_percentile": 92,
+  "stage": "경계",
+  "markets": {
+    "equity": 22,
+    "fx": 18,
+    "rate": 8,
+    "credit": 20
+  },
+  "contributions": {
+    "equity": 32.35,
+    "fx": 26.47,
+    "rate": 11.76,
+    "credit": 29.41
+  },
+  "spread_count": 3,
+  "is_provisional": false,
+  "computed_at": "2026-10-08T01:05:12Z"
+}

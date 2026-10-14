@@ -1,0 +1,23 @@
+{
+  "rule_version": "v0.1",
+  "indicators": [
+    "DEXKOUS",
+    "DGS10",
+    "SP500",
+    "VIXCLS",
+    "BAA10Y"
+  ],
+  "market_weights": {
+    "equity": 0.25,
+    "fx": 0.25,
+    "rate": 0.25,
+    "credit": 0.25
+  },
+  "percentile_window_years": 10,
+  "risk_stage_thresholds": {
+    "주의": 75,
+    "경계": 90,
+    "위험": 95
+  },
+  "spread_threshold": 12.5
+}

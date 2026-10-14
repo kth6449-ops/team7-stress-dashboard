@@ -1,0 +1,80 @@
+{
+  "items": [
+    {
+      "code": "DEXKOUS",
+      "name": "원/달러 환율",
+      "market": "fx",
+      "unit": "KRW/USD",
+      "obs_date": "2026-10-07",
+      "value": 1420.0,
+      "changes": {
+        "d1": 0.4,
+        "m1": 2.1,
+        "m3": null
+      },
+      "change_unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/DEXKOUS"
+    },
+    {
+      "code": "DGS10",
+      "name": "미국 10년물 국채금리",
+      "market": "rate",
+      "unit": "%",
+      "obs_date": "2026-10-08",
+      "value": 4.2,
+      "changes": {
+        "d1": 0.03,
+        "m1": 0.3,
+        "m3": 0.15
+      },
+      "change_unit": "%p",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10"
+    },
+    {
+      "code": "SP500",
+      "name": "S&P500 지수",
+      "market": "equity",
+      "unit": "index",
+      "obs_date": "2026-10-08",
+      "value": 5700.0,
+      "changes": {
+        "d1": -0.8,
+        "m1": -3.5,
+        "m3": -1.2
+      },
+      "change_unit": "%",
+      "source_url": "https://fred.stlouisfed.org/series/SP500"
+    },
+    {
+      "code": "VIXCLS",
+      "name": "VIX 변동성지수",
+      "market": "equity",
+      "unit": "index",
+      "obs_date": "2026-10-08",
+      "value": 23.5,
+      "changes": {
+        "d1": 1.1,
+        "m1": 4.2,
+        "m3": 6.0
+      },
+      "change_unit": "pt",
+      "source_url": "https://fred.stlouisfed.org/series/VIXCLS"
+    },
+    {
+      "code": "BAA10Y",
+      "name": "Baa 회사채-10년물 금리차",
+      "market": "credit",
+      "unit": "%p",
+      "obs_date": "2026-10-08",
+      "value": 2.1,
+      "changes": {
+        "d1": 0.02,
+        "m1": 0.25,
+        "m3": 0.31
+      },
+      "change_unit": "%p",
+      "source_url": "https://fred.stlouisfed.org/series/BAA10Y"
+    }
+  ],
+  "updated_at": "2026-10-08T01:05:12Z"
+}

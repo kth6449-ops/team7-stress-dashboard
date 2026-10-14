@@ -1,0 +1,22 @@
+{
+  "as_of_date": "2026-10-07",
+  "rule_version": "v0.1",
+  "total_score": 0,
+  "total_percentile": 3.0,
+  "stage": "정상",
+  "markets": {
+    "equity": 0,
+    "fx": 0,
+    "rate": 0,
+    "credit": 0
+  },
+  "contributions": {
+    "equity": null,
+    "fx": null,
+    "rate": null,
+    "credit": null
+  },
+  "spread_count": 0,
+  "is_provisional": false,
+  "computed_at": "2026-10-08T01:05:12Z"
+}

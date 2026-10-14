@@ -1,0 +1,1857 @@
+{
+  "from": "2019-10-01",
+  "to": "2020-06-15",
+  "rule_version": "v0.1",
+  "items": [
+    {
+      "as_of_date": "2019-10-01",
+      "total_score": 57.243,
+      "markets": {
+        "equity": 11.0,
+        "fx": 16.89,
+        "rate": 17.365,
+        "credit": 11.988
+      }
+    },
+    {
+      "as_of_date": "2019-10-02",
+      "total_score": 57.263,
+      "markets": {
+        "equity": 11.171,
+        "fx": 16.981,
+        "rate": 17.292,
+        "credit": 11.819
+      }
+    },
+    {
+      "as_of_date": "2019-10-03",
+      "total_score": 57.273,
+      "markets": {
+        "equity": 11.341,
+        "fx": 17.068,
+        "rate": 17.215,
+        "credit": 11.649
+      }
+    },
+    {
+      "as_of_date": "2019-10-04",
+      "total_score": 57.277,
+      "markets": {
+        "equity": 11.512,
+        "fx": 17.151,
+        "rate": 17.135,
+        "credit": 11.479
+      }
+    },
+    {
+      "as_of_date": "2019-10-07",
+      "total_score": 57.272,
+      "markets": {
+        "equity": 11.682,
+        "fx": 17.231,
+        "rate": 17.051,
+        "credit": 11.308
+      }
+    },
+    {
+      "as_of_date": "2019-10-08",
+      "total_score": 57.259,
+      "markets": {
+        "equity": 11.852,
+        "fx": 17.307,
+        "rate": 16.963,
+        "credit": 11.137
+      }
+    },
+    {
+      "as_of_date": "2019-10-09",
+      "total_score": 57.239,
+      "markets": {
+        "equity": 12.021,
+        "fx": 17.379,
+        "rate": 16.872,
+        "credit": 10.967
+      }
+    },
+    {
+      "as_of_date": "2019-10-10",
+      "total_score": 57.21,
+      "markets": {
+        "equity": 12.189,
+        "fx": 17.447,
+        "rate": 16.778,
+        "credit": 10.796
+      }
+    },
+    {
+      "as_of_date": "2019-10-11",
+      "total_score": 57.174,
+      "markets": {
+        "equity": 12.357,
+        "fx": 17.512,
+        "rate": 16.68,
+        "credit": 10.625
+      }
+    },
+    {
+      "as_of_date": "2019-10-14",
+      "total_score": 57.13,
+      "markets": {
+        "equity": 12.524,
+        "fx": 17.573,
+        "rate": 16.578,
+        "credit": 10.455
+      }
+    },
+    {
+      "as_of_date": "2019-10-15",
+      "total_score": 57.077,
+      "markets": {
+        "equity": 12.69,
+        "fx": 17.629,
+        "rate": 16.473,
+        "credit": 10.285
+      }
+    },
+    {
+      "as_of_date": "2019-10-16",
+      "total_score": 57.018,
+      "markets": {
+        "equity": 12.856,
+        "fx": 17.682,
+        "rate": 16.365,
+        "credit": 10.115
+      }
+    },
+    {
+      "as_of_date": "2019-10-17",
+      "total_score": 56.951,
+      "markets": {
+        "equity": 13.02,
+        "fx": 17.731,
+        "rate": 16.254,
+        "credit": 9.946
+      }
+    },
+    {
+      "as_of_date": "2019-10-18",
+      "total_score": 56.877,
+      "markets": {
+        "equity": 13.183,
+        "fx": 17.776,
+        "rate": 16.14,
+        "credit": 9.778
+      }
+    },
+    {
+      "as_of_date": "2019-10-21",
+      "total_score": 56.793,
+      "markets": {
+        "equity": 13.344,
+        "fx": 17.817,
+        "rate": 16.022,
+        "credit": 9.61
+      }
+    },
+    {
+      "as_of_date": "2019-10-22",
+      "total_score": 56.703,
+      "markets": {
+        "equity": 13.504,
+        "fx": 17.854,
+        "rate": 15.902,
+        "credit": 9.443
+      }
+    },
+    {
+      "as_of_date": "2019-10-23",
+      "total_score": 56.604,
+      "markets": {
+        "equity": 13.663,
+        "fx": 17.886,
+        "rate": 15.778,
+        "credit": 9.277
+      }
+    },
+    {
+      "as_of_date": "2019-10-24",
+      "total_score": 56.499,
+      "markets": {
+        "equity": 13.82,
+        "fx": 17.915,
+        "rate": 15.652,
+        "credit": 9.112
+      }
+    },
+    {
+      "as_of_date": "2019-10-25",
+      "total_score": 56.386,
+      "markets": {
+        "equity": 13.975,
+        "fx": 17.939,
+        "rate": 15.523,
+        "credit": 8.949
+      }
+    },
+    {
+      "as_of_date": "2019-10-28",
+      "total_score": 56.267,
+      "markets": {
+        "equity": 14.129,
+        "fx": 17.96,
+        "rate": 15.392,
+        "credit": 8.786
+      }
+    },
+    {
+      "as_of_date": "2019-10-29",
+      "total_score": 56.139,
+      "markets": {
+        "equity": 14.281,
+        "fx": 17.976,
+        "rate": 15.257,
+        "credit": 8.625
+      }
+    },
+    {
+      "as_of_date": "2019-10-30",
+      "total_score": 56.005,
+      "markets": {
+        "equity": 14.431,
+        "fx": 17.988,
+        "rate": 15.121,
+        "credit": 8.465
+      }
+    },
+    {
+      "as_of_date": "2019-10-31",
+      "total_score": 55.861,
+      "markets": {
+        "equity": 14.578,
+        "fx": 17.996,
+        "rate": 14.981,
+        "credit": 8.306
+      }
+    },
+    {
+      "as_of_date": "2019-11-01",
+      "total_score": 55.714,
+      "markets": {
+        "equity": 14.724,
+        "fx": 18.0,
+        "rate": 14.84,
+        "credit": 8.15
+      }
+    },
+    {
+      "as_of_date": "2019-11-04",
+      "total_score": 55.558,
+      "markets": {
+        "equity": 14.868,
+        "fx": 17.999,
+        "rate": 14.696,
+        "credit": 7.995
+      }
+    },
+    {
+      "as_of_date": "2019-11-05",
+      "total_score": 55.395,
+      "markets": {
+        "equity": 15.009,
+        "fx": 17.995,
+        "rate": 14.55,
+        "credit": 7.841
+      }
+    },
+    {
+      "as_of_date": "2019-11-06",
+      "total_score": 55.225,
+      "markets": {
+        "equity": 15.147,
+        "fx": 17.986,
+        "rate": 14.402,
+        "credit": 7.69
+      }
+    },
+    {
+      "as_of_date": "2019-11-07",
+      "total_score": 55.048,
+      "markets": {
+        "equity": 15.284,
+        "fx": 17.973,
+        "rate": 14.251,
+        "credit": 7.54
+      }
+    },
+    {
+      "as_of_date": "2019-11-08",
+      "total_score": 54.865,
+      "markets": {
+        "equity": 15.417,
+        "fx": 17.956,
+        "rate": 14.099,
+        "credit": 7.393
+      }
+    },
+    {
+      "as_of_date": "2019-11-11",
+      "total_score": 54.677,
+      "markets": {
+        "equity": 15.549,
+        "fx": 17.935,
+        "rate": 13.945,
+        "credit": 7.248
+      }
+    },
+    {
+      "as_of_date": "2019-11-12",
+      "total_score": 54.482,
+      "markets": {
+        "equity": 15.677,
+        "fx": 17.91,
+        "rate": 13.79,
+        "credit": 7.105
+      }
+    },
+    {
+      "as_of_date": "2019-11-13",
+      "total_score": 54.279,
+      "markets": {
+        "equity": 15.803,
+        "fx": 17.88,
+        "rate": 13.632,
+        "credit": 6.964
+      }
+    },
+    {
+      "as_of_date": "2019-11-14",
+      "total_score": 54.071,
+      "markets": {
+        "equity": 15.925,
+        "fx": 17.847,
+        "rate": 13.473,
+        "credit": 6.826
+      }
+    },
+    {
+      "as_of_date": "2019-11-15",
+      "total_score": 53.857,
+      "markets": {
+        "equity": 16.045,
+        "fx": 17.809,
+        "rate": 13.313,
+        "credit": 6.69
+      }
+    },
+    {
+      "as_of_date": "2019-11-18",
+      "total_score": 53.637,
+      "markets": {
+        "equity": 16.162,
+        "fx": 17.767,
+        "rate": 13.151,
+        "credit": 6.557
+      }
+    },
+    {
+      "as_of_date": "2019-11-19",
+      "total_score": 53.412,
+      "markets": {
+        "equity": 16.276,
+        "fx": 17.722,
+        "rate": 12.988,
+        "credit": 6.426
+      }
+    },
+    {
+      "as_of_date": "2019-11-20",
+      "total_score": 53.18,
+      "markets": {
+        "equity": 16.386,
+        "fx": 17.672,
+        "rate": 12.824,
+        "credit": 6.298
+      }
+    },
+    {
+      "as_of_date": "2019-11-21",
+      "total_score": 52.944,
+      "markets": {
+        "equity": 16.494,
+        "fx": 17.619,
+        "rate": 12.658,
+        "credit": 6.173
+      }
+    },
+    {
+      "as_of_date": "2019-11-22",
+      "total_score": 52.702,
+      "markets": {
+        "equity": 16.598,
+        "fx": 17.561,
+        "rate": 12.492,
+        "credit": 6.051
+      }
+    },
+    {
+      "as_of_date": "2019-11-25",
+      "total_score": 52.456,
+      "markets": {
+        "equity": 16.699,
+        "fx": 17.5,
+        "rate": 12.325,
+        "credit": 5.932
+      }
+    },
+    {
+      "as_of_date": "2019-11-26",
+      "total_score": 52.203,
+      "markets": {
+        "equity": 16.796,
+        "fx": 17.434,
+        "rate": 12.157,
+        "credit": 5.816
+      }
+    },
+    {
+      "as_of_date": "2019-11-27",
+      "total_score": 51.945,
+      "markets": {
+        "equity": 16.89,
+        "fx": 17.365,
+        "rate": 11.988,
+        "credit": 5.702
+      }
+    },
+    {
+      "as_of_date": "2019-11-28",
+      "total_score": 51.684,
+      "markets": {
+        "equity": 16.981,
+        "fx": 17.292,
+        "rate": 11.819,
+        "credit": 5.592
+      }
+    },
+    {
+      "as_of_date": "2019-11-29",
+      "total_score": 51.418,
+      "markets": {
+        "equity": 17.068,
+        "fx": 17.215,
+        "rate": 11.649,
+        "credit": 5.486
+      }
+    },
+    {
+      "as_of_date": "2019-12-02",
+      "total_score": 51.147,
+      "markets": {
+        "equity": 17.151,
+        "fx": 17.135,
+        "rate": 11.479,
+        "credit": 5.382
+      }
+    },
+    {
+      "as_of_date": "2019-12-03",
+      "total_score": 50.872,
+      "markets": {
+        "equity": 17.231,
+        "fx": 17.051,
+        "rate": 11.308,
+        "credit": 5.282
+      }
+    },
+    {
+      "as_of_date": "2019-12-04",
+      "total_score": 50.592,
+      "markets": {
+        "equity": 17.307,
+        "fx": 16.963,
+        "rate": 11.137,
+        "credit": 5.185
+      }
+    },
+    {
+      "as_of_date": "2019-12-05",
+      "total_score": 50.31,
+      "markets": {
+        "equity": 17.379,
+        "fx": 16.872,
+        "rate": 10.967,
+        "credit": 5.092
+      }
+    },
+    {
+      "as_of_date": "2019-12-06",
+      "total_score": 50.023,
+      "markets": {
+        "equity": 17.447,
+        "fx": 16.778,
+        "rate": 10.796,
+        "credit": 5.002
+      }
+    },
+    {
+      "as_of_date": "2019-12-09",
+      "total_score": 49.733,
+      "markets": {
+        "equity": 17.512,
+        "fx": 16.68,
+        "rate": 10.625,
+        "credit": 4.916
+      }
+    },
+    {
+      "as_of_date": "2019-12-10",
+      "total_score": 49.439,
+      "markets": {
+        "equity": 17.573,
+        "fx": 16.578,
+        "rate": 10.455,
+        "credit": 4.833
+      }
+    },
+    {
+      "as_of_date": "2019-12-11",
+      "total_score": 49.141,
+      "markets": {
+        "equity": 17.629,
+        "fx": 16.473,
+        "rate": 10.285,
+        "credit": 4.754
+      }
+    },
+    {
+      "as_of_date": "2019-12-12",
+      "total_score": 48.841,
+      "markets": {
+        "equity": 17.682,
+        "fx": 16.365,
+        "rate": 10.115,
+        "credit": 4.679
+      }
+    },
+    {
+      "as_of_date": "2019-12-13",
+      "total_score": 48.539,
+      "markets": {
+        "equity": 17.731,
+        "fx": 16.254,
+        "rate": 9.946,
+        "credit": 4.608
+      }
+    },
+    {
+      "as_of_date": "2019-12-16",
+      "total_score": 48.234,
+      "markets": {
+        "equity": 17.776,
+        "fx": 16.14,
+        "rate": 9.778,
+        "credit": 4.54
+      }
+    },
+    {
+      "as_of_date": "2019-12-17",
+      "total_score": 47.925,
+      "markets": {
+        "equity": 17.817,
+        "fx": 16.022,
+        "rate": 9.61,
+        "credit": 4.476
+      }
+    },
+    {
+      "as_of_date": "2019-12-18",
+      "total_score": 47.615,
+      "markets": {
+        "equity": 17.854,
+        "fx": 15.902,
+        "rate": 9.443,
+        "credit": 4.416
+      }
+    },
+    {
+      "as_of_date": "2019-12-19",
+      "total_score": 47.301,
+      "markets": {
+        "equity": 17.886,
+        "fx": 15.778,
+        "rate": 9.277,
+        "credit": 4.36
+      }
+    },
+    {
+      "as_of_date": "2019-12-20",
+      "total_score": 46.987,
+      "markets": {
+        "equity": 17.915,
+        "fx": 15.652,
+        "rate": 9.112,
+        "credit": 4.308
+      }
+    },
+    {
+      "as_of_date": "2019-12-23",
+      "total_score": 46.671,
+      "markets": {
+        "equity": 17.939,
+        "fx": 15.523,
+        "rate": 8.949,
+        "credit": 4.26
+      }
+    },
+    {
+      "as_of_date": "2019-12-24",
+      "total_score": 46.354,
+      "markets": {
+        "equity": 17.96,
+        "fx": 15.392,
+        "rate": 8.786,
+        "credit": 4.216
+      }
+    },
+    {
+      "as_of_date": "2019-12-25",
+      "total_score": 46.034,
+      "markets": {
+        "equity": 17.976,
+        "fx": 15.257,
+        "rate": 8.625,
+        "credit": 4.176
+      }
+    },
+    {
+      "as_of_date": "2019-12-26",
+      "total_score": 45.714,
+      "markets": {
+        "equity": 17.988,
+        "fx": 15.121,
+        "rate": 8.465,
+        "credit": 4.14
+      }
+    },
+    {
+      "as_of_date": "2019-12-27",
+      "total_score": 45.391,
+      "markets": {
+        "equity": 17.996,
+        "fx": 14.981,
+        "rate": 8.306,
+        "credit": 4.108
+      }
+    },
+    {
+      "as_of_date": "2019-12-30",
+      "total_score": 45.07,
+      "markets": {
+        "equity": 18.0,
+        "fx": 14.84,
+        "rate": 8.15,
+        "credit": 4.08
+      }
+    },
+    {
+      "as_of_date": "2019-12-31",
+      "total_score": 44.746,
+      "markets": {
+        "equity": 17.999,
+        "fx": 14.696,
+        "rate": 7.995,
+        "credit": 4.056
+      }
+    },
+    {
+      "as_of_date": "2020-01-01",
+      "total_score": 44.423,
+      "markets": {
+        "equity": 17.995,
+        "fx": 14.55,
+        "rate": 7.841,
+        "credit": 4.037
+      }
+    },
+    {
+      "as_of_date": "2020-01-02",
+      "total_score": 44.099,
+      "markets": {
+        "equity": 17.986,
+        "fx": 14.402,
+        "rate": 7.69,
+        "credit": 4.021
+      }
+    },
+    {
+      "as_of_date": "2020-01-03",
+      "total_score": 43.774,
+      "markets": {
+        "equity": 17.973,
+        "fx": 14.251,
+        "rate": 7.54,
+        "credit": 4.01
+      }
+    },
+    {
+      "as_of_date": "2020-01-06",
+      "total_score": 43.451,
+      "markets": {
+        "equity": 17.956,
+        "fx": 14.099,
+        "rate": 7.393,
+        "credit": 4.003
+      }
+    },
+    {
+      "as_of_date": "2020-01-07",
+      "total_score": 43.128,
+      "markets": {
+        "equity": 17.935,
+        "fx": 13.945,
+        "rate": 7.248,
+        "credit": 4.0
+      }
+    },
+    {
+      "as_of_date": "2020-01-08",
+      "total_score": 42.806,
+      "markets": {
+        "equity": 17.91,
+        "fx": 13.79,
+        "rate": 7.105,
+        "credit": 4.001
+      }
+    },
+    {
+      "as_of_date": "2020-01-09",
+      "total_score": 42.483,
+      "markets": {
+        "equity": 17.88,
+        "fx": 13.632,
+        "rate": 6.964,
+        "credit": 4.007
+      }
+    },
+    {
+      "as_of_date": "2020-01-10",
+      "total_score": 42.162,
+      "markets": {
+        "equity": 17.847,
+        "fx": 13.473,
+        "rate": 6.826,
+        "credit": 4.016
+      }
+    },
+    {
+      "as_of_date": "2020-01-13",
+      "total_score": 41.842,
+      "markets": {
+        "equity": 17.809,
+        "fx": 13.313,
+        "rate": 6.69,
+        "credit": 4.03
+      }
+    },
+    {
+      "as_of_date": "2020-01-14",
+      "total_score": 41.523,
+      "markets": {
+        "equity": 17.767,
+        "fx": 13.151,
+        "rate": 6.557,
+        "credit": 4.048
+      }
+    },
+    {
+      "as_of_date": "2020-01-15",
+      "total_score": 41.206,
+      "markets": {
+        "equity": 17.722,
+        "fx": 12.988,
+        "rate": 6.426,
+        "credit": 4.07
+      }
+    },
+    {
+      "as_of_date": "2020-01-16",
+      "total_score": 40.89,
+      "markets": {
+        "equity": 17.672,
+        "fx": 12.824,
+        "rate": 6.298,
+        "credit": 4.096
+      }
+    },
+    {
+      "as_of_date": "2020-01-17",
+      "total_score": 40.576,
+      "markets": {
+        "equity": 17.619,
+        "fx": 12.658,
+        "rate": 6.173,
+        "credit": 4.126
+      }
+    },
+    {
+      "as_of_date": "2020-01-20",
+      "total_score": 40.264,
+      "markets": {
+        "equity": 17.561,
+        "fx": 12.492,
+        "rate": 6.051,
+        "credit": 4.16
+      }
+    },
+    {
+      "as_of_date": "2020-01-21",
+      "total_score": 39.956,
+      "markets": {
+        "equity": 17.5,
+        "fx": 12.325,
+        "rate": 5.932,
+        "credit": 4.199
+      }
+    },
+    {
+      "as_of_date": "2020-01-22",
+      "total_score": 39.648,
+      "markets": {
+        "equity": 17.434,
+        "fx": 12.157,
+        "rate": 5.816,
+        "credit": 4.241
+      }
+    },
+    {
+      "as_of_date": "2020-01-23",
+      "total_score": 39.343,
+      "markets": {
+        "equity": 17.365,
+        "fx": 11.988,
+        "rate": 5.702,
+        "credit": 4.288
+      }
+    },
+    {
+      "as_of_date": "2020-01-24",
+      "total_score": 39.041,
+      "markets": {
+        "equity": 17.292,
+        "fx": 11.819,
+        "rate": 5.592,
+        "credit": 4.338
+      }
+    },
+    {
+      "as_of_date": "2020-01-27",
+      "total_score": 38.742,
+      "markets": {
+        "equity": 17.215,
+        "fx": 11.649,
+        "rate": 5.486,
+        "credit": 4.392
+      }
+    },
+    {
+      "as_of_date": "2020-01-28",
+      "total_score": 38.447,
+      "markets": {
+        "equity": 17.135,
+        "fx": 11.479,
+        "rate": 5.382,
+        "credit": 4.451
+      }
+    },
+    {
+      "as_of_date": "2020-01-29",
+      "total_score": 38.154,
+      "markets": {
+        "equity": 17.051,
+        "fx": 11.308,
+        "rate": 5.282,
+        "credit": 4.513
+      }
+    },
+    {
+      "as_of_date": "2020-01-30",
+      "total_score": 37.864,
+      "markets": {
+        "equity": 16.963,
+        "fx": 11.137,
+        "rate": 5.185,
+        "credit": 4.579
+      }
+    },
+    {
+      "as_of_date": "2020-01-31",
+      "total_score": 37.58,
+      "markets": {
+        "equity": 16.872,
+        "fx": 10.967,
+        "rate": 5.092,
+        "credit": 4.649
+      }
+    },
+    {
+      "as_of_date": "2020-02-03",
+      "total_score": 37.298,
+      "markets": {
+        "equity": 16.778,
+        "fx": 10.796,
+        "rate": 5.002,
+        "credit": 4.722
+      }
+    },
+    {
+      "as_of_date": "2020-02-04",
+      "total_score": 37.021,
+      "markets": {
+        "equity": 16.68,
+        "fx": 10.625,
+        "rate": 4.916,
+        "credit": 4.8
+      }
+    },
+    {
+      "as_of_date": "2020-02-05",
+      "total_score": 36.747,
+      "markets": {
+        "equity": 16.578,
+        "fx": 10.455,
+        "rate": 4.833,
+        "credit": 4.881
+      }
+    },
+    {
+      "as_of_date": "2020-02-06",
+      "total_score": 36.478,
+      "markets": {
+        "equity": 16.473,
+        "fx": 10.285,
+        "rate": 4.754,
+        "credit": 4.966
+      }
+    },
+    {
+      "as_of_date": "2020-02-07",
+      "total_score": 36.213,
+      "markets": {
+        "equity": 16.365,
+        "fx": 10.115,
+        "rate": 4.679,
+        "credit": 5.054
+      }
+    },
+    {
+      "as_of_date": "2020-02-10",
+      "total_score": 35.954,
+      "markets": {
+        "equity": 16.254,
+        "fx": 9.946,
+        "rate": 4.608,
+        "credit": 5.146
+      }
+    },
+    {
+      "as_of_date": "2020-02-11",
+      "total_score": 35.699,
+      "markets": {
+        "equity": 16.14,
+        "fx": 9.778,
+        "rate": 4.54,
+        "credit": 5.241
+      }
+    },
+    {
+      "as_of_date": "2020-02-12",
+      "total_score": 35.448,
+      "markets": {
+        "equity": 16.022,
+        "fx": 9.61,
+        "rate": 4.476,
+        "credit": 5.34
+      }
+    },
+    {
+      "as_of_date": "2020-02-13",
+      "total_score": 35.203,
+      "markets": {
+        "equity": 15.902,
+        "fx": 9.443,
+        "rate": 4.416,
+        "credit": 5.442
+      }
+    },
+    {
+      "as_of_date": "2020-02-14",
+      "total_score": 34.963,
+      "markets": {
+        "equity": 15.778,
+        "fx": 9.277,
+        "rate": 4.36,
+        "credit": 5.548
+      }
+    },
+    {
+      "as_of_date": "2020-02-17",
+      "total_score": 34.728,
+      "markets": {
+        "equity": 15.652,
+        "fx": 9.112,
+        "rate": 4.308,
+        "credit": 5.656
+      }
+    },
+    {
+      "as_of_date": "2020-02-18",
+      "total_score": 34.5,
+      "markets": {
+        "equity": 15.523,
+        "fx": 8.949,
+        "rate": 4.26,
+        "credit": 5.768
+      }
+    },
+    {
+      "as_of_date": "2020-02-19",
+      "total_score": 34.277,
+      "markets": {
+        "equity": 15.392,
+        "fx": 8.786,
+        "rate": 4.216,
+        "credit": 5.883
+      }
+    },
+    {
+      "as_of_date": "2020-02-20",
+      "total_score": 34.059,
+      "markets": {
+        "equity": 15.257,
+        "fx": 8.625,
+        "rate": 4.176,
+        "credit": 6.001
+      }
+    },
+    {
+      "as_of_date": "2020-02-21",
+      "total_score": 33.848,
+      "markets": {
+        "equity": 15.121,
+        "fx": 8.465,
+        "rate": 4.14,
+        "credit": 6.122
+      }
+    },
+    {
+      "as_of_date": "2020-02-24",
+      "total_score": 33.641,
+      "markets": {
+        "equity": 14.981,
+        "fx": 8.306,
+        "rate": 4.108,
+        "credit": 6.246
+      }
+    },
+    {
+      "as_of_date": "2020-02-25",
+      "total_score": 33.443,
+      "markets": {
+        "equity": 14.84,
+        "fx": 8.15,
+        "rate": 4.08,
+        "credit": 6.373
+      }
+    },
+    {
+      "as_of_date": "2020-02-26",
+      "total_score": 33.249,
+      "markets": {
+        "equity": 14.696,
+        "fx": 7.995,
+        "rate": 4.056,
+        "credit": 6.502
+      }
+    },
+    {
+      "as_of_date": "2020-02-27",
+      "total_score": 33.062,
+      "markets": {
+        "equity": 14.55,
+        "fx": 7.841,
+        "rate": 4.037,
+        "credit": 6.634
+      }
+    },
+    {
+      "as_of_date": "2020-02-28",
+      "total_score": 32.882,
+      "markets": {
+        "equity": 14.402,
+        "fx": 7.69,
+        "rate": 4.021,
+        "credit": 6.769
+      }
+    },
+    {
+      "as_of_date": "2020-03-02",
+      "total_score": 32.707,
+      "markets": {
+        "equity": 14.251,
+        "fx": 7.54,
+        "rate": 4.01,
+        "credit": 6.906
+      }
+    },
+    {
+      "as_of_date": "2020-03-03",
+      "total_score": 32.541,
+      "markets": {
+        "equity": 14.099,
+        "fx": 7.393,
+        "rate": 4.003,
+        "credit": 7.046
+      }
+    },
+    {
+      "as_of_date": "2020-03-04",
+      "total_score": 32.381,
+      "markets": {
+        "equity": 13.945,
+        "fx": 7.248,
+        "rate": 4.0,
+        "credit": 7.188
+      }
+    },
+    {
+      "as_of_date": "2020-03-05",
+      "total_score": 32.228,
+      "markets": {
+        "equity": 13.79,
+        "fx": 7.105,
+        "rate": 4.001,
+        "credit": 7.332
+      }
+    },
+    {
+      "as_of_date": "2020-03-06",
+      "total_score": 32.082,
+      "markets": {
+        "equity": 13.632,
+        "fx": 6.964,
+        "rate": 4.007,
+        "credit": 7.479
+      }
+    },
+    {
+      "as_of_date": "2020-03-09",
+      "total_score": 31.942,
+      "markets": {
+        "equity": 13.473,
+        "fx": 6.826,
+        "rate": 4.016,
+        "credit": 7.627
+      }
+    },
+    {
+      "as_of_date": "2020-03-10",
+      "total_score": 31.811,
+      "markets": {
+        "equity": 13.313,
+        "fx": 6.69,
+        "rate": 4.03,
+        "credit": 7.778
+      }
+    },
+    {
+      "as_of_date": "2020-03-11",
+      "total_score": 31.687,
+      "markets": {
+        "equity": 13.151,
+        "fx": 6.557,
+        "rate": 4.048,
+        "credit": 7.931
+      }
+    },
+    {
+      "as_of_date": "2020-03-12",
+      "total_score": 31.569,
+      "markets": {
+        "equity": 12.988,
+        "fx": 6.426,
+        "rate": 4.07,
+        "credit": 8.085
+      }
+    },
+    {
+      "as_of_date": "2020-03-13",
+      "total_score": 31.459,
+      "markets": {
+        "equity": 12.824,
+        "fx": 6.298,
+        "rate": 4.096,
+        "credit": 8.241
+      }
+    },
+    {
+      "as_of_date": "2020-03-16",
+      "total_score": 31.356,
+      "markets": {
+        "equity": 12.658,
+        "fx": 6.173,
+        "rate": 4.126,
+        "credit": 8.399
+      }
+    },
+    {
+      "as_of_date": "2020-03-17",
+      "total_score": 31.261,
+      "markets": {
+        "equity": 12.492,
+        "fx": 6.051,
+        "rate": 4.16,
+        "credit": 8.558
+      }
+    },
+    {
+      "as_of_date": "2020-03-18",
+      "total_score": 31.175,
+      "markets": {
+        "equity": 12.325,
+        "fx": 5.932,
+        "rate": 4.199,
+        "credit": 8.719
+      }
+    },
+    {
+      "as_of_date": "2020-03-19",
+      "total_score": 31.095,
+      "markets": {
+        "equity": 12.157,
+        "fx": 5.816,
+        "rate": 4.241,
+        "credit": 8.881
+      }
+    },
+    {
+      "as_of_date": "2020-03-20",
+      "total_score": 31.022,
+      "markets": {
+        "equity": 11.988,
+        "fx": 5.702,
+        "rate": 4.288,
+        "credit": 9.044
+      }
+    },
+    {
+      "as_of_date": "2020-03-23",
+      "total_score": 30.958,
+      "markets": {
+        "equity": 11.819,
+        "fx": 5.592,
+        "rate": 4.338,
+        "credit": 9.209
+      }
+    },
+    {
+      "as_of_date": "2020-03-24",
+      "total_score": 30.901,
+      "markets": {
+        "equity": 11.649,
+        "fx": 5.486,
+        "rate": 4.392,
+        "credit": 9.374
+      }
+    },
+    {
+      "as_of_date": "2020-03-25",
+      "total_score": 30.853,
+      "markets": {
+        "equity": 11.479,
+        "fx": 5.382,
+        "rate": 4.451,
+        "credit": 9.541
+      }
+    },
+    {
+      "as_of_date": "2020-03-26",
+      "total_score": 30.811,
+      "markets": {
+        "equity": 11.308,
+        "fx": 5.282,
+        "rate": 4.513,
+        "credit": 9.708
+      }
+    },
+    {
+      "as_of_date": "2020-03-27",
+      "total_score": 30.777,
+      "markets": {
+        "equity": 11.137,
+        "fx": 5.185,
+        "rate": 4.579,
+        "credit": 9.876
+      }
+    },
+    {
+      "as_of_date": "2020-03-30",
+      "total_score": 30.753,
+      "markets": {
+        "equity": 10.967,
+        "fx": 5.092,
+        "rate": 4.649,
+        "credit": 10.045
+      }
+    },
+    {
+      "as_of_date": "2020-03-31",
+      "total_score": 30.734,
+      "markets": {
+        "equity": 10.796,
+        "fx": 5.002,
+        "rate": 4.722,
+        "credit": 10.214
+      }
+    },
+    {
+      "as_of_date": "2020-04-01",
+      "total_score": 30.725,
+      "markets": {
+        "equity": 10.625,
+        "fx": 4.916,
+        "rate": 4.8,
+        "credit": 10.384
+      }
+    },
+    {
+      "as_of_date": "2020-04-02",
+      "total_score": 30.724,
+      "markets": {
+        "equity": 10.455,
+        "fx": 4.833,
+        "rate": 4.881,
+        "credit": 10.555
+      }
+    },
+    {
+      "as_of_date": "2020-04-03",
+      "total_score": 30.73,
+      "markets": {
+        "equity": 10.285,
+        "fx": 4.754,
+        "rate": 4.966,
+        "credit": 10.725
+      }
+    },
+    {
+      "as_of_date": "2020-04-06",
+      "total_score": 30.744,
+      "markets": {
+        "equity": 10.115,
+        "fx": 4.679,
+        "rate": 5.054,
+        "credit": 10.896
+      }
+    },
+    {
+      "as_of_date": "2020-04-07",
+      "total_score": 30.766,
+      "markets": {
+        "equity": 9.946,
+        "fx": 4.608,
+        "rate": 5.146,
+        "credit": 11.066
+      }
+    },
+    {
+      "as_of_date": "2020-04-08",
+      "total_score": 30.796,
+      "markets": {
+        "equity": 9.778,
+        "fx": 4.54,
+        "rate": 5.241,
+        "credit": 11.237
+      }
+    },
+    {
+      "as_of_date": "2020-04-09",
+      "total_score": 30.834,
+      "markets": {
+        "equity": 9.61,
+        "fx": 4.476,
+        "rate": 5.34,
+        "credit": 11.408
+      }
+    },
+    {
+      "as_of_date": "2020-04-10",
+      "total_score": 30.879,
+      "markets": {
+        "equity": 9.443,
+        "fx": 4.416,
+        "rate": 5.442,
+        "credit": 11.578
+      }
+    },
+    {
+      "as_of_date": "2020-04-13",
+      "total_score": 30.933,
+      "markets": {
+        "equity": 9.277,
+        "fx": 4.36,
+        "rate": 5.548,
+        "credit": 11.748
+      }
+    },
+    {
+      "as_of_date": "2020-04-14",
+      "total_score": 30.993,
+      "markets": {
+        "equity": 9.112,
+        "fx": 4.308,
+        "rate": 5.656,
+        "credit": 11.917
+      }
+    },
+    {
+      "as_of_date": "2020-04-15",
+      "total_score": 31.063,
+      "markets": {
+        "equity": 8.949,
+        "fx": 4.26,
+        "rate": 5.768,
+        "credit": 12.086
+      }
+    },
+    {
+      "as_of_date": "2020-04-16",
+      "total_score": 31.14,
+      "markets": {
+        "equity": 8.786,
+        "fx": 4.216,
+        "rate": 5.883,
+        "credit": 12.255
+      }
+    },
+    {
+      "as_of_date": "2020-04-17",
+      "total_score": 31.224,
+      "markets": {
+        "equity": 8.625,
+        "fx": 4.176,
+        "rate": 6.001,
+        "credit": 12.422
+      }
+    },
+    {
+      "as_of_date": "2020-04-20",
+      "total_score": 31.316,
+      "markets": {
+        "equity": 8.465,
+        "fx": 4.14,
+        "rate": 6.122,
+        "credit": 12.589
+      }
+    },
+    {
+      "as_of_date": "2020-04-21",
+      "total_score": 31.415,
+      "markets": {
+        "equity": 8.306,
+        "fx": 4.108,
+        "rate": 6.246,
+        "credit": 12.755
+      }
+    },
+    {
+      "as_of_date": "2020-04-22",
+      "total_score": 31.523,
+      "markets": {
+        "equity": 8.15,
+        "fx": 4.08,
+        "rate": 6.373,
+        "credit": 12.92
+      }
+    },
+    {
+      "as_of_date": "2020-04-23",
+      "total_score": 31.636,
+      "markets": {
+        "equity": 7.995,
+        "fx": 4.056,
+        "rate": 6.502,
+        "credit": 13.083
+      }
+    },
+    {
+      "as_of_date": "2020-04-24",
+      "total_score": 31.758,
+      "markets": {
+        "equity": 7.841,
+        "fx": 4.037,
+        "rate": 6.634,
+        "credit": 13.246
+      }
+    },
+    {
+      "as_of_date": "2020-04-27",
+      "total_score": 31.887,
+      "markets": {
+        "equity": 7.69,
+        "fx": 4.021,
+        "rate": 6.769,
+        "credit": 13.407
+      }
+    },
+    {
+      "as_of_date": "2020-04-28",
+      "total_score": 32.022,
+      "markets": {
+        "equity": 7.54,
+        "fx": 4.01,
+        "rate": 6.906,
+        "credit": 13.566
+      }
+    },
+    {
+      "as_of_date": "2020-04-29",
+      "total_score": 32.166,
+      "markets": {
+        "equity": 7.393,
+        "fx": 4.003,
+        "rate": 7.046,
+        "credit": 13.724
+      }
+    },
+    {
+      "as_of_date": "2020-04-30",
+      "total_score": 32.317,
+      "markets": {
+        "equity": 7.248,
+        "fx": 4.0,
+        "rate": 7.188,
+        "credit": 13.881
+      }
+    },
+    {
+      "as_of_date": "2020-05-01",
+      "total_score": 32.473,
+      "markets": {
+        "equity": 7.105,
+        "fx": 4.001,
+        "rate": 7.332,
+        "credit": 14.035
+      }
+    },
+    {
+      "as_of_date": "2020-05-04",
+      "total_score": 32.638,
+      "markets": {
+        "equity": 6.964,
+        "fx": 4.007,
+        "rate": 7.479,
+        "credit": 14.188
+      }
+    },
+    {
+      "as_of_date": "2020-05-05",
+      "total_score": 32.808,
+      "markets": {
+        "equity": 6.826,
+        "fx": 4.016,
+        "rate": 7.627,
+        "credit": 14.339
+      }
+    },
+    {
+      "as_of_date": "2020-05-06",
+      "total_score": 32.986,
+      "markets": {
+        "equity": 6.69,
+        "fx": 4.03,
+        "rate": 7.778,
+        "credit": 14.488
+      }
+    },
+    {
+      "as_of_date": "2020-05-07",
+      "total_score": 33.171,
+      "markets": {
+        "equity": 6.557,
+        "fx": 4.048,
+        "rate": 7.931,
+        "credit": 14.635
+      }
+    },
+    {
+      "as_of_date": "2020-05-08",
+      "total_score": 33.361,
+      "markets": {
+        "equity": 6.426,
+        "fx": 4.07,
+        "rate": 8.085,
+        "credit": 14.78
+      }
+    },
+    {
+      "as_of_date": "2020-05-11",
+      "total_score": 33.558,
+      "markets": {
+        "equity": 6.298,
+        "fx": 4.096,
+        "rate": 8.241,
+        "credit": 14.923
+      }
+    },
+    {
+      "as_of_date": "2020-05-12",
+      "total_score": 33.761,
+      "markets": {
+        "equity": 6.173,
+        "fx": 4.126,
+        "rate": 8.399,
+        "credit": 15.063
+      }
+    },
+    {
+      "as_of_date": "2020-05-13",
+      "total_score": 33.97,
+      "markets": {
+        "equity": 6.051,
+        "fx": 4.16,
+        "rate": 8.558,
+        "credit": 15.201
+      }
+    },
+    {
+      "as_of_date": "2020-05-14",
+      "total_score": 34.186,
+      "markets": {
+        "equity": 5.932,
+        "fx": 4.199,
+        "rate": 8.719,
+        "credit": 15.336
+      }
+    },
+    {
+      "as_of_date": "2020-05-15",
+      "total_score": 34.407,
+      "markets": {
+        "equity": 5.816,
+        "fx": 4.241,
+        "rate": 8.881,
+        "credit": 15.469
+      }
+    },
+    {
+      "as_of_date": "2020-05-18",
+      "total_score": 34.633,
+      "markets": {
+        "equity": 5.702,
+        "fx": 4.288,
+        "rate": 9.044,
+        "credit": 15.599
+      }
+    },
+    {
+      "as_of_date": "2020-05-19",
+      "total_score": 34.865,
+      "markets": {
+        "equity": 5.592,
+        "fx": 4.338,
+        "rate": 9.209,
+        "credit": 15.726
+      }
+    },
+    {
+      "as_of_date": "2020-05-20",
+      "total_score": 35.103,
+      "markets": {
+        "equity": 5.486,
+        "fx": 4.392,
+        "rate": 9.374,
+        "credit": 15.851
+      }
+    },
+    {
+      "as_of_date": "2020-05-21",
+      "total_score": 35.346,
+      "markets": {
+        "equity": 5.382,
+        "fx": 4.451,
+        "rate": 9.541,
+        "credit": 15.972
+      }
+    },
+    {
+      "as_of_date": "2020-05-22",
+      "total_score": 35.594,
+      "markets": {
+        "equity": 5.282,
+        "fx": 4.513,
+        "rate": 9.708,
+        "credit": 16.091
+      }
+    },
+    {
+      "as_of_date": "2020-05-25",
+      "total_score": 35.847,
+      "markets": {
+        "equity": 5.185,
+        "fx": 4.579,
+        "rate": 9.876,
+        "credit": 16.207
+      }
+    },
+    {
+      "as_of_date": "2020-05-26",
+      "total_score": 36.105,
+      "markets": {
+        "equity": 5.092,
+        "fx": 4.649,
+        "rate": 10.045,
+        "credit": 16.319
+      }
+    },
+    {
+      "as_of_date": "2020-05-27",
+      "total_score": 36.367,
+      "markets": {
+        "equity": 5.002,
+        "fx": 4.722,
+        "rate": 10.214,
+        "credit": 16.429
+      }
+    },
+    {
+      "as_of_date": "2020-05-28",
+      "total_score": 36.635,
+      "markets": {
+        "equity": 4.916,
+        "fx": 4.8,
+        "rate": 10.384,
+        "credit": 16.535
+      }
+    },
+    {
+      "as_of_date": "2020-05-29",
+      "total_score": 36.907,
+      "markets": {
+        "equity": 4.833,
+        "fx": 4.881,
+        "rate": 10.555,
+        "credit": 16.638
+      }
+    },
+    {
+      "as_of_date": "2020-06-01",
+      "total_score": 37.182,
+      "markets": {
+        "equity": 4.754,
+        "fx": 4.966,
+        "rate": 10.725,
+        "credit": 16.737
+      }
+    },
+    {
+      "as_of_date": "2020-06-02",
+      "total_score": 37.462,
+      "markets": {
+        "equity": 4.679,
+        "fx": 5.054,
+        "rate": 10.896,
+        "credit": 16.833
+      }
+    },
+    {
+      "as_of_date": "2020-06-03",
+      "total_score": 37.746,
+      "markets": {
+        "equity": 4.608,
+        "fx": 5.146,
+        "rate": 11.066,
+        "credit": 16.926
+      }
+    },
+    {
+      "as_of_date": "2020-06-04",
+      "total_score": 38.033,
+      "markets": {
+        "equity": 4.54,
+        "fx": 5.241,
+        "rate": 11.237,
+        "credit": 17.015
+      }
+    },
+    {
+      "as_of_date": "2020-06-05",
+      "total_score": 38.325,
+      "markets": {
+        "equity": 4.476,
+        "fx": 5.34,
+        "rate": 11.408,
+        "credit": 17.101
+      }
+    },
+    {
+      "as_of_date": "2020-06-08",
+      "total_score": 38.618,
+      "markets": {
+        "equity": 4.416,
+        "fx": 5.442,
+        "rate": 11.578,
+        "credit": 17.182
+      }
+    },
+    {
+      "as_of_date": "2020-06-09",
+      "total_score": 38.917,
+      "markets": {
+        "equity": 4.36,
+        "fx": 5.548,
+        "rate": 11.748,
+        "credit": 17.261
+      }
+    },
+    {
+      "as_of_date": "2020-06-10",
+      "total_score": 39.216,
+      "markets": {
+        "equity": 4.308,
+        "fx": 5.656,
+        "rate": 11.917,
+        "credit": 17.335
+      }
+    },
+    {
+      "as_of_date": "2020-06-11",
+      "total_score": 39.52,
+      "markets": {
+        "equity": 4.26,
+        "fx": 5.768,
+        "rate": 12.086,
+        "credit": 17.406
+      }
+    },
+    {
+      "as_of_date": "2020-06-12",
+      "total_score": 39.827,
+      "markets": {
+        "equity": 4.216,
+        "fx": 5.883,
+        "rate": 12.255,
+        "credit": 17.473
+      }
+    },
+    {
+      "as_of_date": "2020-06-15",
+      "total_score": 41.5,
+      "markets": {
+        "equity": 15.5,
+        "fx": 9.0,
+        "rate": 4.5,
+        "credit": 12.5
+      }
+    }
+  ]
+}
