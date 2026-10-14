@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>금융시장 스트레스 모니터</title>
+  <meta name="description" content="주식·외환·금리·신용 4개 시장의 스트레스를 매일 점수로 보여주는 대시보드">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<div id="sample-banner" class="notice notice--sample" hidden>
+  샘플 데이터로 표시 중입니다. 화면의 숫자는 실제 시장 수치가 아닙니다.
+</div>
+<div id="wake-banner" class="notice notice--wake" role="status" aria-live="polite" hidden>
+  서버를 깨우는 중입니다. 무료 서버라 첫 접속에 최대 1분 걸릴 수 있습니다.
+</div>
+<div id="stale-banner" class="notice notice--stale" role="status" hidden></div>
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <div class="brand">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M3 22 L10 15 L15 19 L22 9 L29 13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="22" cy="9" r="3.2" fill="currentColor"/>
+      </svg>
+      <div>
+        <h1 class="brand__name">금융시장 스트레스 모니터</h1>
+        <p class="brand__sub">주식·외환·금리·신용 4개 시장의 불안을 매일 점수로 봅니다</p>
+      </div>
+    </div>
+    <dl class="meta">
+      <div class="meta__item">
+        <dt>점수 기준일</dt>
+        <dd id="meta-asof">—</dd>
+      </div>
+      <div class="meta__item">
+        <dt>데이터 상태</dt>
+        <dd><span id="meta-health" class="health health--unknown">확인 중</span></dd>
+      </div>
+      <div class="meta__item">
+        <dt>산식 버전</dt>
+        <dd id="meta-rule">—</dd>
+      </div>
+    </dl>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <!-- 1. 종합 현황 -->
+  <section id="overview" class="panel overview" aria-labelledby="overview-title">
+    <h2 id="overview-title" class="visually-hidden">종합 스트레스 현황</h2>
+    <div class="state" data-state="loading">
+      <div class="skeleton skeleton--hero"></div>
+    </div>
+    <div class="overview__body" hidden>
+      <div class="overview__top">
+        <div class="score">
+          <p class="score__label">종합 스트레스 점수</p>
+          <p class="score__value"><span id="total-score">—</span><span class="score__max">/ 100</span></p>
+        </div>
+        <div class="stage-block">
+          <p class="score__label">위험단계</p>
+          <p id="stage-pill" class="stage stage--none">—</p>
+          <p id="stage-note" class="stage-note"></p>
+        </div>
+      </div>
+      <p id="summary" class="summary" hidden></p>
+
+      <div class="rail-block">
+        <div class="rail-head">
+          <p class="rail-title">과거 대비 위치</p>
+          <p id="rail-caption" class="rail-caption">—</p>
+        </div>
+        <div id="rail" class="rail" role="img" aria-label="과거 대비 위치">
+          <div class="rail__zone rail__zone--normal" style="--from:0;--to:75"><span>정상</span></div>
+          <div class="rail__zone rail__zone--caution" style="--from:75;--to:90"><span>주의</span></div>
+          <div class="rail__zone rail__zone--alert" style="--from:90;--to:95"><span>경계</span></div>
+          <div class="rail__zone rail__zone--danger" style="--from:95;--to:100"><span>위험</span></div>
+          <div id="rail-marker" class="rail__marker" hidden><span id="rail-marker-label"></span></div>
+        </div>
+        <div class="rail-scale" aria-hidden="true">
+          <span style="--at:0">0</span><span style="--at:75">75</span><span style="--at:90">90</span><span style="--at:95">95</span><span style="--at:100">100</span>
+        </div>
+        <p class="rail-help">관측 가능한 과거 기간(최대 10년)의 종합점수와 비교한 백분위입니다. 위험단계는 점수가 아니라 이 위치로 정해집니다. 표시 백분위는 소수 첫째 자리로 반올림하며, 단계는 반올림 전 값을 기준으로 API가 제공합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 시장 진단 -->
+  <section id="markets" class="panel" aria-labelledby="markets-title">
+    <div class="panel__head">
+      <h2 id="markets-title">시장별 점수</h2>
+      <p class="panel__hint">시장마다 최대 25점, 네 시장을 더하면 종합점수입니다</p>
+    </div>
+    <div class="state" data-state="loading"><div class="skeleton skeleton--rows"></div></div>
+    <div class="markets__body" hidden>
+      <ol id="market-list" class="market-list"></ol>
+      <div class="diag">
+        <div class="diag__item">
+          <p class="diag__label">동시 스트레스 시장</p>
+          <p class="diag__value"><span id="spread-count">—</span><span class="diag__unit">/ 4개 시장</span></p>
+          <div id="spread-pips" class="pips" aria-hidden="true"></div>
+          <p id="spread-note" class="diag__note"></p>
+        </div>
+        <div class="diag__item diag__item--wide">
+          <p class="diag__label">종합점수 기여도</p>
+          <div id="contrib-bar" class="contrib" role="img"></div>
+          <ul id="contrib-legend" class="contrib-legend"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 추이 -->
+  <section id="trend" class="panel" aria-labelledby="trend-title">
+    <div class="panel__head panel__head--controls">
+      <div>
+        <h2 id="trend-title">점수 추이</h2>
+        <p class="panel__hint">색 띠는 시장별 점수, 맨 위 선은 종합점수입니다</p>
+      </div>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="조회 기간">
+          <button type="button" data-period="1m">1개월</button>
+          <button type="button" data-period="3m" aria-pressed="true">3개월</button>
+          <button type="button" data-period="1y">1년</button>
+          <button type="button" data-period="all">전체</button>
+        </div>
+        <div class="seg" role="group" aria-label="보기 방식">
+          <button type="button" data-view="chart" aria-pressed="true">차트</button>
+          <button type="button" data-view="table">표</button>
+        </div>
+      </div>
+    </div>
+    <ul id="trend-legend" class="legend"></ul>
+    <div class="state" data-state="loading"><div class="skeleton skeleton--chart"></div></div>
+    <div class="trend__body" hidden>
+      <div id="trend-chart" class="chart" tabindex="0" role="img" aria-label="종합점수와 시장별 점수 추이 차트. 좌우 화살표로 날짜를 이동할 수 있습니다."></div>
+      <div id="trend-table" class="table-wrap" hidden></div>
+      <p id="trend-range" class="chart-note"></p>
+    </div>
+  </section>
+
+  <!-- 4. 지표 -->
+  <section id="indicators" class="panel" aria-labelledby="indicators-title">
+    <div class="panel__head">
+      <h2 id="indicators-title">금융지표</h2>
+      <p class="panel__hint">지표마다 최신 관측일이 다를 수 있습니다. 행을 누르면 추이를 볼 수 있습니다</p>
+    </div>
+    <div class="state" data-state="loading"><div class="skeleton skeleton--rows"></div></div>
+    <div class="indicators__body" hidden>
+      <div class="table-wrap">
+        <table class="ind-table">
+          <thead>
+            <tr>
+              <th scope="col">지표</th>
+              <th scope="col" class="num">현재 값</th>
+              <th scope="col" class="num">전일 대비</th>
+              <th scope="col" class="num">1개월</th>
+              <th scope="col" class="num">3개월</th>
+              <th scope="col">관측일</th>
+            </tr>
+          </thead>
+          <tbody id="ind-rows"></tbody>
+        </table>
+      </div>
+      <p id="ind-updated" class="chart-note"></p>
+      <div id="ind-detail" class="detail" hidden>
+        <div class="detail__head">
+          <h3 id="detail-title">—</h3>
+          <button type="button" class="btn-text" id="detail-close">닫기</button>
+        </div>
+        <div class="state" data-state="loading"><div class="skeleton skeleton--chart"></div></div>
+        <div class="detail__body" hidden>
+          <div id="detail-chart" class="chart chart--short" tabindex="0" role="img"></div>
+          <p id="detail-note" class="chart-note"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 방법론 -->
+  <section id="method" class="panel method" aria-labelledby="method-title">
+    <div class="panel__head">
+      <h2 id="method-title">점수는 이렇게 계산합니다</h2>
+    </div>
+    <div class="method__grid">
+      <div class="method__col">
+        <h3>1. 지표를 스트레스 값으로 바꿉니다</h3>
+        <table class="mini-table">
+          <thead><tr><th scope="col">시장</th><th scope="col">지표</th><th scope="col">스트레스 값</th></tr></thead>
+          <tbody>
+            <tr><td><i class="dot" style="--c:var(--equity)"></i>주식</td><td>S&amp;P500</td><td>최근 252개 관측치 최고점 대비 하락폭</td></tr>
+            <tr><td></td><td>VIX</td><td>현재 지수 수준</td></tr>
+            <tr><td><i class="dot" style="--c:var(--fx)"></i>외환</td><td>원/달러 환율</td><td>21개 전 유효 관측치 대비 상승률</td></tr>
+            <tr><td><i class="dot" style="--c:var(--rate)"></i>금리</td><td>미국 10년물 국채</td><td>21개 전 유효 관측치 대비 변화폭(절댓값)</td></tr>
+            <tr><td><i class="dot" style="--c:var(--credit)"></i>신용</td><td>Baa 회사채 − 10년물</td><td>현재 금리차 수준</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="method__col">
+        <h3>2. 과거와 비교해 점수로 바꿉니다</h3>
+        <p>각 스트레스 값이 관측 가능한 과거 기간(최소 2년, 최대 10년)에서 몇 백분위인지 구하고, 아래 식으로 0~25점을 매깁니다. 평범한 수준(50백분위 이하)은 0점입니다.</p>
+        <p class="formula">점수 = 25 × max(0, (백분위 − 50) ÷ 50)</p>
+        <p>주식시장은 S&amp;P500과 VIX 점수의 평균입니다. 네 시장 점수를 더한 값이 종합점수(0~100)입니다.</p>
+      </div>
+      <div class="method__col">
+        <h3>3. 위험단계를 정합니다</h3>
+        <p>종합점수가 과거 종합점수 중 어디에 있는지로 정합니다.</p>
+        <ul class="stage-list">
+          <li><span class="stage stage--normal">정상</span> 75백분위 미만</li>
+          <li><span class="stage stage--caution">주의</span> 75 이상 90 미만 (과거 상위 25%)</li>
+          <li><span class="stage stage--alert">경계</span> 90 이상 95 미만 (상위 10%)</li>
+          <li><span class="stage stage--danger">위험</span> 95 이상 (상위 5%)</li>
+        </ul>
+        <p>동시 스트레스 시장은 12.5점 이상인 시장의 수입니다.</p>
+      </div>
+      <div class="method__col">
+        <h3>알아둘 점</h3>
+        <ul class="plain-list">
+          <li>다섯 지표가 모두 있는 마지막 날을 점수 기준일로 씁니다. 원/달러는 공개가 늦어 기준일이 며칠 전일 수 있습니다.</li>
+          <li>FRED의 S&amp;P500은 최근 10년치만 제공되어, 초기 구간은 비교 기간이 짧고 위험단계가 산출되지 않습니다.</li>
+          <li>시장 가격에 나타난 현재 불안을 요약한 지표입니다. 미래를 예측하거나 투자를 권유하지 않습니다.</li>
+        </ul>
+        <p class="sources-title">데이터 출처</p>
+        <ul id="sources" class="sources"><li>FRED, Federal Reserve Bank of St. Louis</li></ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p>클라우드컴퓨팅실습 7조 금융시장 스트레스 모니터링 대시보드</p>
+    <p>투자 판단을 돕는 시장 정보이며, 매수·매도 신호가 아닙니다.</p>
+  </div>
+</footer>
+
+<div id="tooltip" class="tooltip" role="presentation" hidden></div>
+
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

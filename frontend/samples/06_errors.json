@@ -1,0 +1,27 @@
+{
+  "_설명": "응답 예시 모음. 실제 API는 아래 중 하나의 본문만 반환함",
+  "404_latest_not_found": {
+    "detail": "조회 가능한 데이터가 없습니다."
+  },
+  "404_unknown_indicator": {
+    "detail": "존재하지 않는 지표 코드입니다: ABC"
+  },
+  "422_invalid_date": {
+    "detail": [
+      {
+        "loc": [
+          "query",
+          "from"
+        ],
+        "msg": "Input should be a valid date",
+        "type": "date_from_datetime_parsing"
+      }
+    ]
+  },
+  "422_from_after_to": {
+    "detail": "from은 to보다 늦을 수 없습니다."
+  },
+  "500_server_error": {
+    "detail": "서버 처리 중 오류가 발생했습니다."
+  }
+}

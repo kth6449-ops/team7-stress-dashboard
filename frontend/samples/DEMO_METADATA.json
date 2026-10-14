@@ -1,0 +1,15 @@
+{
+  "description": "D UI 테스트용 합성 데이터. 실제 금융데이터나 B 산식 검증 결과가 아님. 기존 C 샘플의 최신값을 유지하고 기간/5지표 테스트 데이터를 확장함. changes는 C의 가상 표시 예시를 유지하며 새 합성 추이로 재산출한 값이 아님.",
+  "version": "D-v0.2",
+  "source": "original C demo + deterministic synthetic history",
+  "scenarios": [
+    "normal",
+    "zero",
+    "nostage",
+    "empty",
+    "stale",
+    "nohistory",
+    "error",
+    "slow"
+  ]
+}
