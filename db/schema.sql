@@ -1,6 +1,9 @@
--- [A 담당 · 초안] 5개 테이블 생성 + 지표 초기 입력
--- 상세 개발 가이드 v1.1 기준. A가 검토·확정 후 전달본으로 교체.
+-- [A 담당 · 검토본 v0.1] 5개 테이블 생성 + 지표 초기 입력
+-- C 초안(상세 개발 가이드 v1.1 기준)을 그대로 유지하고, 아래 2건만 추가함.
+--   + observations(obs_date) 인덱스: 날짜 범위 조회(/scores, /observations?from=&to=) 속도용
+--   + 5개 테이블 RLS 활성화 (맨 아래): Supabase 자동 공개 API로 외부에서 읽고 쓰는 것을 차단
 -- 여러 번 실행해도 오류가 나지 않도록 IF NOT EXISTS / ON CONFLICT 사용.
+-- 주의: DROP / DELETE / TRUNCATE 문은 넣지 않음 (S&P500 과거 데이터 보존)
 
 CREATE TABLE IF NOT EXISTS indicators (
     code        text PRIMARY KEY,           -- FRED ID
@@ -17,6 +20,8 @@ CREATE TABLE IF NOT EXISTS observations (
     fetched_at  timestamptz NOT NULL DEFAULT now(),
     PRIMARY KEY (code, obs_date)
 );
+
+CREATE INDEX IF NOT EXISTS observations_obs_date_idx ON observations (obs_date);
 
 CREATE TABLE IF NOT EXISTS pipeline_runs (
     run_id       bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -63,3 +68,12 @@ INSERT INTO indicators (code, name, market, unit, source_url) VALUES
     ('VIXCLS',  'VIX 변동성지수',            'equity', 'index',   'https://fred.stlouisfed.org/series/VIXCLS'),
     ('BAA10Y',  'Baa 회사채-10년물 금리차',   'credit', '%p',      'https://fred.stlouisfed.org/series/BAA10Y')
 ON CONFLICT (code) DO NOTHING;
+
+-- [A 추가] Supabase 자동 REST API(Data API) 차단용 보안 설정
+-- Supabase는 public 스키마의 테이블을 웹 API로 자동 공개하므로, RLS를 켜서 외부 접근을 막음.
+-- 우리 서비스는 DATABASE_URL(postgres 계정)로 직접 접속하며, 테이블 소유자라 RLS 영향을 받지 않음.
+ALTER TABLE indicators      ENABLE ROW LEVEL SECURITY;
+ALTER TABLE observations    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE pipeline_runs   ENABLE ROW LEVEL SECURITY;
+ALTER TABLE indicator_score ENABLE ROW LEVEL SECURITY;
+ALTER TABLE daily_scores    ENABLE ROW LEVEL SECURITY;

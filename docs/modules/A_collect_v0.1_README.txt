@@ -1,0 +1,117 @@
+A 모듈 (수집·DB) 전달본 v0.1
+================================
+작성: A (송수원) · 대상: C (통합) · 기준 문서: 시스템 운영·모듈 전달 가이드 v1.0
+
+1. 파일 구성 (저장소 경로 그대로)
+--------------------------------
+pipeline/collect.py      fetch_observations(), SERIES          ← 가이드 4-1
+pipeline/db.py           get_connection(), upsert_observations(),
+                         load_observations()                   ← 가이드 4-2
+db/schema.sql            5개 테이블 + 지표 5개 초기 입력        ← 가이드 4-3 (C 초안 검토본)
+tools/a_check.py         (보조) FRED 실측: 시작일·결측·공개 지연 + B용 CSV 생성
+tools/a_initial_load.py  (보조) B 산식 없이 원본만 초기 적재 (C와 합의 후 실행)
+A_check_report.txt       (첨부) 실측 결과
+A_sample_observations.csv(첨부) 수집 결과 샘플 (code, obs_date, value)
+
+※ tools/ 는 운영 파이프라인에 필요 없는 보조 스크립트. 저장소에 넣을지는 C 판단.
+
+2. 계약 준수 사항
+--------------------------------
+[collect.py]
+- 출력 컬럼: code(str), obs_date(datetime.date), value(float 또는 None)
+- FRED "." → None (0으로 바꾸지 않음). (code, obs_date) 중복 제거, code·날짜 오름차순
+- API 키는 환경변수 FRED_API_KEY에서만 읽음. 없으면 RuntimeError
+- 지표 하나라도 실패하면 RuntimeError 발생 (일부만 받고 넘어가지 않음)
+  · 400/401/403/404(코드·키 오류)는 즉시 실패
+  · 네트워크 오류·429·5xx는 3회까지 재시도 후 실패
+- start/end 형식(YYYY-MM-DD) 확인, end=None이면 오늘까지
+
+[db.py]
+- get_connection(): DATABASE_URL로 psycopg 연결. prepare_threshold=None 설정
+  (Supabase pooler 사용 시 prepared statement 충돌 방지)
+- upsert_observations(): (code, obs_date) 기준 INSERT ... ON CONFLICT DO UPDATE.
+  fetched_at = 저장 시각(UTC). NaN/None → NULL. 반환값 = 저장 행 수.
+  ★ commit 하지 않음 (run.py가 확정)
+- load_observations(start=None): code, obs_date, value 반환.
+  value는 float64 (NULL → NaN). DB numeric이 Decimal로 읽히는 것을 float로 변환함.
+- 데이터 삭제 함수는 두지 않음 (S&P500 과거 데이터 보존 원칙)
+
+[schema.sql]
+- C 초안을 그대로 유지. 변경 2건:
+  + CREATE INDEX IF NOT EXISTS observations_obs_date_idx ON observations (obs_date);
+  + 5개 테이블 ENABLE ROW LEVEL SECURITY
+    (Supabase 자동 공개 REST API로 외부에서 읽고 쓰는 것을 차단.
+     DATABASE_URL의 postgres 계정은 테이블 소유자라 영향 없음 — 로컬에서 확인)
+- DROP/DELETE/TRUNCATE 없음. 여러 번 실행해도 오류 없음 (확인함)
+
+3. 실행 방법 (macOS 기준)
+--------------------------------
+  cd team7-stress-dashboard            # 저장소 루트
+  python3 -m venv .venv && source .venv/bin/activate
+  pip install -r requirements.txt      # pandas, requests, psycopg[binary] 사용
+  export FRED_API_KEY="본인키"
+  export DATABASE_URL="C가 안내한 주소"
+
+  python -m pipeline.collect --start 2026-09-01     # DB 없이 수집만 확인
+  python -m tools.a_check                           # 실측 리포트 + B용 CSV
+  python -m tools.a_initial_load --codes VIXCLS --start 2026-09-01   # 1개 지표 저장 시험
+  python -m tools.a_initial_load                    # 전체 초기 적재 (2005-01-01~)
+
+  Windows PowerShell은 export 대신:  $env:FRED_API_KEY = "본인키"
+
+추가 라이브러리: 없음 (requirements.txt 범위 안)
+
+4. 테스트한 내용
+--------------------------------
+- 로컬 PostgreSQL 16 + FRED 응답 모의 데이터로 확인
+  · schema.sql 2회 연속 실행 → 오류 없음
+  · upsert 후 commit 전에는 다른 연결에서 보이지 않음 (commit 미수행 확인)
+  · 같은 데이터 재저장 → 중복 없이 갱신
+  · C의 run.py(--start 2005-01-01, --days 14)와 연결 → success
+    (scoring.compute_scores는 빈 결과를 돌려주는 임시 함수로 대체)
+  · 잘못된 지표 코드, API 키 누락 → RuntimeError
+- 실제 FRED·Supabase 연결 결과는 A_check_report.txt 참고
+- B 모듈(B_scoring_v0.1_1011)과 연결 시험 (2026-10-11, 로컬 PostgreSQL 16)
+  · A의 schema.sql + db.py + B의 scoring.py + C의 run.py 조합
+    (collect는 A 실제 수집 데이터 25,322행을 돌려주는 시험용 대체본 사용)
+  · run.py --start 2005-01-01 → success (indicator_score 24,070행, daily_scores 1,737행)
+  · run.py --days 14 --trigger schedule → success (재실행해도 중복 없음)
+  · DB에 'NaN' 문자 저장 0건 (NaN → NULL 정상), observations 25,322행 유지
+  · A 데이터로 계산한 결과 = B가 받은 FRED CSV 결과 (B output 샘플과 전 컬럼 차이 1e-14 이하)
+    → 점수 시작 2019-10-09, 위험단계 시작 2021-10-12, 최신 기준일 2026-10-02
+
+5. Supabase 운영 (A가 생성·관리)
+--------------------------------
+- 프로젝트: Team7_Financial_Stress_Dashboard / 리전 Seoul / Free 플랜. C는 관리자 권한으로 초대함
+- 접속 주소: Session pooler 방식 DATABASE_URL을 C에게 개인 메시지로 전달
+  (Render 환경변수, GitHub Actions Secrets에 등록용)
+- DB 비밀번호 변경·프로젝트 삭제는 C와 사전 협의 후에만
+- ★ Supabase 현재 상태 (C 확인 요청, CLAUDE.md 10/13판과 다른 점)
+  · 테이블은 10/10 A가 이 전달본의 schema.sql(v0.1: obs_date 인덱스 + 5개 테이블 RLS)로 생성함.
+    10/12 C가 실행한 v0.0은 IF NOT EXISTS / ON CONFLICT DO NOTHING이라 변경 없음
+    → Supabase 적용 버전 = schema v0.1
+  · observations는 비어 있지 않음: 25,322행 적재 완료, pipeline_runs에 run_id 1·2 (manual, success)
+  · indicator_score, daily_scores만 비어 있음 → C가 run.py --start 2005-01-01 실행 시 채워짐
+    (원본은 같은 값으로 덮어쓰기만 되므로 재실행 안전)
+  · Data API(자동 REST)는 끈 상태. 서비스는 DATABASE_URL(Session pooler) 직접 접속만 사용
+- 초기 적재 완료: 2026-10-10 (pipeline_runs run_id=2, 25,322행)
+    지표      시작일      마지막일    행 수   결측
+    BAA10Y    2005-01-03  2026-10-08  5679    237
+    DEXKOUS   2005-01-03  2026-10-02  5675    224
+    DGS10     2005-01-03  2026-10-08  5679    232
+    SP500     2016-10-10  2026-10-09  2610     96
+    VIXCLS    2005-01-03  2026-10-08  5679    170
+  (run_id=1은 VIXCLS 1개 저장 시험. 프로젝트 보안: Data API 끔, 5개 테이블 RLS 켬)
+
+6. 알려진 사항 / C 확인 요청
+--------------------------------
+- DEXKOUS(원/달러)는 FRED 공개가 주 단위로 늦음 → A_check_report.txt의 '공개 지연' 참고
+  (/health stale 기준 결정 3의 근거값)
+- FRED SP500은 최근 10년치만 제공. 초기 적재 후 DB 데이터를 지우거나 통째로 재적재하지 않을 것
+- indicator_score, daily_scores의 numeric 컬럼도 psycopg에서 Decimal로 읽힘
+  → API(JSON) 응답 시 float 변환 필요할 수 있음 (C 참고)
+- run.py의 --days 14 재수집은 FRED 기준 '관측일' 14일. DEXKOUS 공개 지연(약 1주)보다 길어 문제 없음
+
+7. 변경 이력
+--------------------------------
+v0.1 (2026-10-13) 최초 전달 (모듈 버전: collect v0.1, db v0.1, schema v0.1)
