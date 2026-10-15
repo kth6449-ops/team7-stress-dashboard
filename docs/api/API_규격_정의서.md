@@ -11,7 +11,7 @@
 
 | 항목 | 규칙 |
 |---|---|
-| 기본 URL | 10/12 임시 서버 배포 후 공유 (`https://<render-주소>`) |
+| 기본 URL | `https://team7-stress-dashboard.onrender.com` (10/15부터 실제 DB 조회) |
 | 경로 접두어 | 없음 (`/api/v1` 사용하지 않음) |
 | 요청 방식 | 모두 `GET` |
 | 응답 형식 | `application/json`, UTF-8 |
@@ -115,7 +115,7 @@
 | `latest_as_of_date` | 최신 점수 기준일 (`empty`면 `null`) |
 | `last_success_at` | 마지막 정상 실행 시각 (`empty`면 `null`) |
 
-- `stale` 판정 기준(현재 제안): 한국 날짜와 `latest_as_of_date` 차이가 4일 초과. **실제 데이터 지연 확인 후 조정 예정** (아래 미결 사항 참조).
+- `stale` 판정 기준: 한국 날짜와 `latest_as_of_date` 차이가 **10일 초과** (결정 3-B: 원/달러 실측 최대 공개 지연 8일 + 2일, 10/15 반영). 원/달러가 주 1회 공개되어 기준일이 평소에도 약 1주 늦음.
 - 예외 샘플: `cases/05_health_stale.json`, `cases/05_health_empty.json`
 
 ### 3-6. `GET /methodology` (후순위)
@@ -154,7 +154,7 @@
 | # | 항목 | 현재 상태 | 영향 |
 |---|---|---|---|
 | 1 | 10년 백분위와 데이터 수집 기간 | B와 협의 필요 | 실제 추이 차트의 시작일, `total_percentile`이 `null`일 수 있음 → **D는 `null` 표시 처리 필요** |
-| 2 | `stale` 판정 기준(4일) | 원/달러 공개 지연 실측 후 조정 | `/health`의 `data_status` 값 |
+| 2 | `stale` 판정 기준 | ✅ 10일로 반영 (10/15, 결정 3-B) | `/health`의 `data_status` 값 |
 | 3 | `compute_scores()` 출력 컬럼 | B·C 협의 | API 필드 값의 출처 (필드명은 불변) |
 
 필드명·구조는 위 미결 사항과 관계없이 **고정**함.

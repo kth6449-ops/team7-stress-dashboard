@@ -31,7 +31,8 @@ FRED API → pipeline(GitHub Actions) → Supabase(PostgreSQL) → api(FastAPI·
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# 임시 API (샘플 JSON 반환)
+# 조회 API (DATABASE_URL 필요 — Supabase 저장 결과를 읽음)
+set -a; source .env; set +a          # 로컬 비밀값 (.gitignore 등록)
 uvicorn api.main:app --reload        # http://127.0.0.1:8000/docs
 
 # 점수 계산 테스트 (pytest는 테스트할 때만 설치)
@@ -50,3 +51,4 @@ python -m pipeline.run --days 14            # 이후 매일
 | `FRED_API_KEY` | GitHub Actions, 로컬 |
 | `DATABASE_URL` | GitHub Actions, Render, 로컬 |
 | `ALLOWED_ORIGINS` | Render (화면 주소, 쉼표 구분) |
+| `STALE_DAYS` | Render, 선택 (`/health` 갱신 지연 기준일, 기본 10) |
