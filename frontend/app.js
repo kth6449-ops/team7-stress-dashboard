@@ -14,7 +14,7 @@
      주소창에 ?source=api 또는 ?source=samples 를 붙이면 일시적으로 전환
      --------------------------------------------------------- */
   const CONFIG = {
-    USE_SAMPLES: true,
+    USE_SAMPLES: false,
     API_BASE: "https://team7-stress-dashboard.onrender.com",
     WAKE_NOTICE_MS: 8000,        // 이 시간 넘게 응답이 없으면 "서버 깨우는 중" 안내
     REQUEST_TIMEOUT_MS: 90000,   // Render 무료 서버 콜드 스타트를 고려해 길게
