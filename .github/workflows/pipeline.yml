@@ -1,0 +1,58 @@
+# [C 담당] 데이터 파이프라인 자동 실행: FRED 수집 → 점수 계산 → Supabase 저장 (pipeline/run.py)
+#
+# 실행 방법 2가지
+#   1) 예약 실행(schedule): 아래 cron 시각마다 자동 실행 → pipeline_runs.trigger = 'schedule'
+#   2) 수동 실행(workflow_dispatch): GitHub → Actions → pipeline → Run workflow → trigger = 'manual'
+#
+# 필요한 Secrets (Settings → Secrets and variables → Actions): FRED_API_KEY, DATABASE_URL
+# 무료 티어 참고: 예약 실행은 정시보다 늦게 시작하거나 붐비는 시간에 건너뛰어질 수 있음.
+#                매번 최근 14일을 다시 받아 upsert하므로, 한 번 빠져도 다음 실행에서 보정됨.
+name: pipeline
+
+on:
+  workflow_dispatch:
+  schedule:
+    # cron은 UTC 기준 (한국 시간 - 9시간). 정시(00분)는 전 세계 예약이 몰려 지연이 커서 17분으로 둠
+    - cron: "17 21 * * *"     # 매일 06:17 KST — FRED가 미국 오후에 공개한 값을 한국 아침에 수집
+    - cron: "17 23 * * *"     # 매일 08:17 KST — 예비 실행 (1회차가 지연·누락돼도 보정, 같은 값 upsert라 중복 없음)
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pipeline            # 실행이 겹치지 않게 한 번에 하나씩
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.9"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt pytest
+
+      - name: Check secrets
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          # 값은 출력하지 않고 등록 여부만 확인
+          test -n "$FRED_API_KEY" || { echo "Secret FRED_API_KEY가 등록되지 않았습니다"; exit 1; }
+          test -n "$DATABASE_URL" || { echo "Secret DATABASE_URL이 등록되지 않았습니다"; exit 1; }
+
+      - name: Test scoring
+        # 산식 테스트가 실패하면 DB에 쓰지 않고 중단
+        run: pytest tests/test_scoring.py -q
+
+      - name: Run pipeline
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python -m pipeline.run --days 14 --trigger ${{ github.event_name == 'schedule' && 'schedule' || 'manual' }}
