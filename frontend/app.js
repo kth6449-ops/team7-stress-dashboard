@@ -561,7 +561,7 @@
         </tr>`;
     }).join("");
     $("#ind-updated").textContent =
-      `변화는 직전·21개·63개 이전 관측치와 비교한 값입니다. 환율·S&P500은 %, 금리·신용은 %p, VIX는 포인트입니다. 갱신 ${fmt.dateTimeKST(updatedAt)}`;
+      `※ 변화는 직전·21개·63개 이전 관측치와 비교한 값입니다. 환율·S&P500은 %, 금리·신용은 %p, VIX는 포인트입니다. 갱신 ${fmt.dateTimeKST(updatedAt)}`;
 
     $("#ind-rows").querySelectorAll("tr").forEach((tr) => {
       const open = () => openDetail(tr.dataset.code);

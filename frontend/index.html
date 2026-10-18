@@ -35,7 +35,7 @@
     </div>
     <dl class="meta">
       <div class="meta__item">
-        <dt>점수 기준일</dt>
+        <dt>종합점수 기준일</dt>
         <dd id="meta-asof">—</dd>
       </div>
       <div class="meta__item">
@@ -96,8 +96,7 @@
   <section id="markets" class="panel" aria-labelledby="markets-title">
     <div class="panel__head">
       <h2 id="markets-title">시장별 점수</h2>
-      <p class="panel__hint">시장마다 최대 25점, 네 시장을 더하면 종합점수입니다</p>
-    </div>
+        </div>
     <div class="state" data-state="loading"><div class="skeleton skeleton--rows"></div></div>
     <div class="markets__body" hidden>
       <ol id="market-list" class="market-list"></ol>
@@ -114,6 +113,8 @@
           <ul id="contrib-legend" class="contrib-legend"></ul>
         </div>
       </div>
+      <p class="chart-note">※ 시장마다 최대 25점, 네 시장을 더하면 종합점수입니다.</p>
+      <p class="chart-note" style="margin-top:4px;">※ 시장별 0점은 데이터 누락이 아닌 정상 계산 결과입니다. 관련 지표의 스트레스 수준이 과거 분포의 50백분위 이하이면 0점으로 환산됩니다.</p>
     </div>
   </section>
 
@@ -150,7 +151,6 @@
   <section id="indicators" class="panel" aria-labelledby="indicators-title">
     <div class="panel__head">
       <h2 id="indicators-title">금융지표</h2>
-      <p class="panel__hint">지표마다 최신 관측일이 다를 수 있습니다. 행을 누르면 추이를 볼 수 있습니다</p>
     </div>
     <div class="state" data-state="loading"><div class="skeleton skeleton--rows"></div></div>
     <div class="indicators__body" hidden>
@@ -170,6 +170,7 @@
         </table>
       </div>
       <p id="ind-updated" class="chart-note"></p>
+      <p class="chart-note" style="margin-top:4px;">※ 각 금융지표는 해당 지표의 최신 관측일 기준으로 표시되며, 상단 종합점수 및 시장별 점수의 기준일과 다를 수 있습니다. 행을 누르면 추이를 볼 수 있습니다.</p>
       <div id="ind-detail" class="detail" hidden>
         <div class="detail__head">
           <h3 id="detail-title">—</h3>
